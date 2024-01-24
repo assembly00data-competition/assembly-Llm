@@ -1,10 +1,9 @@
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/c1b4612c-7099-4cd7-8044-444f9f31c710)
-
+=
 # LAW-Alpaca
 
-AI 법률 어드바이저 모델 개발
+AI 국회 어드바이저 모델 개발
 
-KoAlpaca 모델에 법률 데이터를 학습시켜 (LoRA finetuning) 법률 자문을 해줄 수 있는 언어모델을 개발한다.
+KoAlpaca 모델에 국회 데이터를 학습시켜 (LoRA finetuning) 법률 자문을 해줄 수 있는 언어모델을 개발한다.
 
 ![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/8f6550d7-35a3-45af-98c8-1704c530368d)
 ![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/3078da85-5eb0-4448-9d29-5f5baf1383bc)
@@ -16,18 +15,16 @@ KoAlpaca 모델에 법률 데이터를 학습시켜 (LoRA finetuning) 법률 자
 Pretrained model link : [hyunseoki/ko-en-llama2-13b](https://huggingface.co/hyunseoki/ko-en-llama2-13b)
 
 ## Data
-[생활 법령](https://www.easylaw.go.kr/CSP/Main.laf) 100문 100답 데이터 2,195개를 스크랩 하여 LLM 학습을 위한 대화 형식의 json 파일로 만들어놓았습니다.
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/f9d81285-3a2f-445f-895e-f3f5c2ef9ee5)
+국회데이터
 
-
-[huggingface dataset](https://huggingface.co/datasets/juicyjung/easylaw_kr)에도 올려놓았습니다.
+[huggingface dataset](https://huggingface.co/datasets/bong9/assemblydata)에도 올려놓았습니다.
 
 datasets library에서 이 dataset을 바로 불러올 수 있습니다 :
 
 ```python
 from datasets import load_dataset
 
-dataset = load_dataset("juicyjung/easylaw_kr")
+dataset = load_dataset("bong9/assemblydata")
 ```
 
 ## Copyright Policy
@@ -68,7 +65,7 @@ tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
 model.eval()
 ```
 
-법률 질문에 대한 답변을 생성하기 위해 다음과 같은 코드를 사용합니다 :
+법률안 질문에 대한 답변을 생성하기 위해 다음과 같은 코드를 사용합니다 :
 
 ```python
 def gen(x):
