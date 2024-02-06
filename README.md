@@ -1,5 +1,5 @@
 =
-# LAW-Alpaca
+# assenbly-Alpaca
 
 AI 국회 어드바이저 모델 개발
 
@@ -29,11 +29,9 @@ dataset = load_dataset("bong9/assemblydata")
 
 ## Copyright Policy
 
-생활법령 데이터 저작권 정책 : https://www.easylaw.go.kr/CSP/InfoCopyright.laf
-
+[국회 공모전 대회 홈페이지](https://www.assembly00data.com/summary/summary.php)
 "누구에게나 개방되어있으며, 영리 목적을 포함하여 모든 자유로운 활동이 보장됩니다."
 
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/7704897e-4775-401c-a075-526b9c9fd211)
 
 ## Resources
 
@@ -50,7 +48,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from peft import PeftModel, PeftConfig
 
-peft_model_id = "juicyjung/ko_law_alpaca-12.8b"
+peft_model_id = "Bong9/easydata"
 config = PeftConfig.from_pretrained(peft_model_id)
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -85,12 +83,8 @@ def gen(x):
     print(tokenizer.decode(gened[0]))
 
 
-gen('월세방을 얻어 자취를 하던 중 군 입영통지서를 받았습니다. 아직 임대차 계약기간이 남았는데 보증금을 돌려받을 수 있을까요?')
+gen('보건의료에 관심이 많은데 어떤 국회의원에게 관심을 가져야할까요?')
 ```
 
-## Contributions
 
-이 프로젝트에 대한 Contributions는 언제나 환영입니다. 특히 [데이터](https://github.com/juicyjung/LAW-Alpaca/blob/main/%EC%83%9D%ED%99%9C%EB%B2%95%EB%A0%B9.json) 힘들게 수집했으니 많은 후속 연구 부탁드립니다!!
-
-문제가 발견되거나 제안사항이 있으면 이 repository에 issue를 열어 주세요.
 "# assembly-alphaca" 
