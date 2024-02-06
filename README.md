@@ -5,9 +5,6 @@ AI 국회 어드바이저 모델 개발
 
 KoAlpaca 모델에 국회 데이터를 학습시켜 (LoRA finetuning) 법률 자문을 해줄 수 있는 언어모델을 개발한다.
 
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/8f6550d7-35a3-45af-98c8-1704c530368d)
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/3078da85-5eb0-4448-9d29-5f5baf1383bc)
-![image](https://github.com/juicyjung/LAW-Alpaca/assets/83687471/9897cbdc-f995-459d-b6a7-8f8a4dcced85)
 
 
 
